@@ -5,8 +5,7 @@
 
 ## Confusion Matrix
 
-> ### 定義
-> [color=#C63939] 
+> ### 定義 
 > 
     用來評估模型或是演算法的好壞，用一個表格表示，其中一列 / 行代表預測值與實際值
     通常用在分類模型
@@ -14,7 +13,6 @@
 ![](https://i.imgur.com/LDjecVD.png)
 
 > ### 意義
-> [color=#C63939] 
 > 
     TP 代表真實被標記為「有」的情況，模型預測他為「有」這個類別的個數
     TN 代表真實被標記為「沒有」的情況，模型預測他為「沒有」這個類別的個數
@@ -86,12 +84,10 @@ plot_confusion_matrix(y_true, y_pred, classes=class_names, count=element_count)
 >[sklearn - Confusion matrix](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py)
 [python matplotlib 中 axes 與 axis 的區別 ?](https://www.zhihu.com/question/51745620)
 >
->[name=可愛的瑄]
 
 ---
 ### Accuracy
 > ### 意義
-> [color=#C63939] 
 > 
     正確率，實際值與預測值一致時即為預測正確
 :sparkles: 依照confusion matrix，TP 和 TN 加總即為正確個數
@@ -114,7 +110,6 @@ output :
 :sparkles: confusion_matrix 這個函式與我們常見之 matrix 會有相反的狀況
 ### Precision
 > ### 意義
-> [color=#C63939] 
 > 
     精確率，被模型預測為「有」的情況下，有多少是真正為「有」的
 :sparkles: 例如：辨識垃圾郵件，如果 Precision 太低，代表實際非垃圾郵件中被模型預測為垃圾郵件相對較高(FP)，使用者因此會失去許多重要訊息
@@ -136,7 +131,6 @@ output :
 
 ### Recall
 > ### 意義
-> [color=#C63939] 
 > 
     召回率，被實際值為「有」的情況下，有多少是被模型預測出結果為「有」的
 :sparkles: 例如：辨識垃圾郵件，如果 recall 太低，代表真實為垃圾郵件，被模型預測為非垃圾郵件的比例相對較高(FN)，使用者則會收到許多垃圾郵件
@@ -161,7 +155,6 @@ output :
 實心點代表實際為「有」的
 
 > ### 小注意
-> [color=#398bc6] 
 > 
     recall 和 precision 通常一個高另外一個就會低
 :sparkles: 低 recall，高 precision：這代表我們錯過了是 positive 的資料（高 FN）但我們預測為 positive 的資料確實大部分都是 positive 的（低 FP）
@@ -170,12 +163,10 @@ output :
 ### ROC
 
 > ### 定義
-> [color=#C63939] 
 > 
     用來呈現 sensitivity 及 1-specificity 的圖形
 
 > ### 意義
-> [color=#C63939] 
 > 
     若是曲線愈往圖形左上方移動表示 sensitivity 愈高，FP 愈低
 ![](https://i.imgur.com/V53NKyj.png)
@@ -209,12 +200,11 @@ output :
 ### AUC
 
 > ### 定義
-> [color=#C63939] 
 > 
     曲線下的面積 (Area under curve)，用來判別 ROC 曲線的鑑別力
 
 > ### 意義
-> [color=#C63939] 
+
 > 
     範圍從為 0~1之間，數值愈大愈好
 ![](https://i.imgur.com/PsYV6qr.png)
@@ -232,7 +222,6 @@ output：
     0.5727272727272728
 ### F1
 > ### 意義
-> [color=#C63939] 
 >
     想要在 Precision 和 Recall 之間尋求平衡時使用
     
@@ -252,7 +241,6 @@ output :
     0.5
 
 > ### 直接使用 sklearn.metrics 的方法
-> [color=#398bc6] 
 > 
     
 ```python=
@@ -286,7 +274,6 @@ output :
 
 ### F1-micro
 > ### 意義
-> [color=#C63939] 
 >
     同常用在多類別的分類，計算所有的類別的 TP、FN、FP
     
@@ -314,8 +301,7 @@ output :
     F1-Score:  0.5625
 
 ### F1-macro
-> ### 意義
-> [color=#C63939] 
+> ### 意義 
 >
     同常用在多類別的分類，計算每個類別的 precision、recall，並計算平均值
     但是未考慮類別不平衡
@@ -349,11 +335,9 @@ output :
 >
 >[F1-micro 和 F1-macro 差別](http://sofasofa.io/forum_main_post.php?postid=1001112)
 >
->[name=可愛的瑄]
 >
 
 > ### 小補充
-> [color=#398bc6] 
 > 
     classification_report 可以看到各類別的 precision、recall 等其他 F1 計算結果
 ```python=
